@@ -4,7 +4,7 @@ include "Template/header.php";
 
 ?>
 
-<form class="w-50 mx-auto my-5" action="login.php" method="post">
+<form class="w-50 mx-auto my-5" action="sign.php" method="post">
   <div class="form-group">
     <label for="userName">Votre nom</label>
     <input type="text" class="form-control" id="userName" name="user_name" required>
@@ -15,11 +15,11 @@ include "Template/header.php";
   </div>
   <div class="form-group">
     <label for="userPassword">Confirmer votre mot de passe</label>
-    <input type="password" class="form-control" id="userPassword" name="user_password" required>
+    <input type="password" class="form-control" id="userPassword" name="repeatpassword" required>
   </div>
   <div class="form-group">
   <select class="custom-select" required>
-      <label for="userSexe">Votre sexe</label>
+      <label name="userSexe">Votre sexe</label>
       <option value="1">Homme</option>
       <option value="2">Femme</option>
     </select>

@@ -7,7 +7,7 @@
       echo "<li class='list-group-item'>$key : $value</li>";
     }
     ?>
-    <a href="basket.php"class="list-group-item text-center"><i class="fas fa-shopping-basket"></i></a>
-    <a href="index.php"class="list-group-item text-center">Déconnecter</a>
+    <a href="basket.php" class="list-group-item text-center"><i class="fas fa-shopping-basket"></i></a>
+    <a href="disconnexion.php" class="list-group-item text-center">Déconnecter</a>
   </ul>
 </aside>
