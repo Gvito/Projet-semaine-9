@@ -1,32 +1,37 @@
 <?php
-// on vérifie si le formulaire est completé
-if (isset($_POST['user_name, user_password, repeatpassword'])) {
-    // protège mon formulaire du HTML
-    $_POST['user_name, user_password, repeatpassword'] = htmlspecialchars($_POST['user_name, user_password, repeatpassword']); // On rend inoffensives les balises HTML que le visiteur a pu rentrer
+$code= "";
+// on vérifie si le formulaire est complet
+if (isset($_POST['user_name']) && isset($_POST['user_password']) && isset($_POST['repeatpassword'])) {
+    // protège mon formulaire du HT
+    // $_POST['user_name, user_password, repeatpassword'] = htmlspecialchars($_POST['user_name, user_password, repeatpassword']); // On rend inoffensives les balises HTML que le visiteur a pu rentrer
 
-    if (preg_match("#(a-zA-Z{3,})#", $_POST['user_name'])) {
+    // (strlen('user_name')
+  if (strlen($_POST['user_name']) < 3) {
+     // Si le nom ne comporte pas les bonnes conditions
+     $code .= "0";
+  }
 
-      if (preg_match("#(a-z([A-Z]{1})([1-9]{1}){6,})#", $_POST['user_password'])) {
+  if ($_POST['user_password'] != $_POST['repeatpassword']) {
+    // Si le password de confirmation n'est pas identique
+     $code .= "1";
+  }
 
-        if ($user_password == $repeatpassword) {
+  if (!preg_match("#([A-Z]{1,})#", $_POST['user_password']) || !preg_match("#([0-9]{1,})#", $_POST['user_password']) || strlen($_POST['user_password']) < 6){
+     // Si le password ne comporte pas les bonnes conditions
+     $code .= "2";
+  }
 
-        }
+  header("Location: signHome.php?");
+  exit;
 
-      }
-
-    }
-
-    header("Location: signHome.php?message=");
-    exit;
 }
-
-
-
-
-// si mon formulaire n'est pas completé
+// si le formulaire n'est pas complet
 else {
-  header("Location: signHome.php?message=Veuillez remplir toutes les conditions");
+  header("Location: signHome.php?message=Veuillez remplir toutes les champs du formulaire");
   exit;
 }
+
+// header("Location: index.php?message=Vous êtes inscrit. Bienvenue !");
+// exit;
 
  ?>

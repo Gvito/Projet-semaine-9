@@ -1,5 +1,5 @@
 <aside class="col-lg-3">
-  <i class="fas fa-user-ninja fa-4x mb-3"></i>
+  <i class="fas fa-user-alt fa-4x mb-3"></i>
   <ul class="list-group">
     <?php
     //On boucle sur l'utilisateur stocké en session pour afficher toutes ses informations

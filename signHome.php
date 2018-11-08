@@ -1,8 +1,15 @@
 <?php
+$messages= [
+  'Le nom doit comporter au moins 3 caractères',
+  'La confirmation du mot de passe n\'est pas identique',
+  'Le mot de passe doit comporter au moins 6 caractères, une majuscule et un chiffre'
+];
 //load Header
 include "Template/header.php";
 
 ?>
+
+<!-- <?php echo '<div class="alert alert-danger" role="alert"> . "  " . </div>'; ?> -->
 
 <form class="w-50 mx-auto my-5" action="sign.php" method="post">
   <div class="form-group">
