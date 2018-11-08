@@ -1,5 +1,6 @@
 <?php
-$code= "";
+$code = "";
+$pattern = '/(?=.*[A-Z]{1,})(?=.*[0-9]{1,}).{6,}/';
 // on vérifie si le formulaire est complet
 if (isset($_POST['user_name']) && isset($_POST['user_password']) && isset($_POST['repeatpassword'])) {
     // protège mon formulaire du HT
@@ -16,13 +17,18 @@ if (isset($_POST['user_name']) && isset($_POST['user_password']) && isset($_POST
      $code .= "1";
   }
 
-  if (!preg_match("#([A-Z]{1,})#", $_POST['user_password']) || !preg_match("#([0-9]{1,})#", $_POST['user_password']) || strlen($_POST['user_password']) < 6){
+  if (!preg_match($pattern, $_POST['user_password'])) {
      // Si le password ne comporte pas les bonnes conditions
      $code .= "2";
   }
 
-  header("Location: signHome.php?");
+if (empty($code)) {
+  header("Location: index.php?message=Vous êtes inscrit");
   exit;
+} else {
+  header("Location: signHome.php?code=$code");
+  exit;
+}
 
 }
 // si le formulaire n'est pas complet

@@ -1,4 +1,5 @@
 <?php
+
 $messages= [
   'Le nom doit comporter au moins 3 caractères',
   'La confirmation du mot de passe n\'est pas identique',
@@ -7,9 +8,20 @@ $messages= [
 //load Header
 include "Template/header.php";
 
+if (isset($_GET['code'])) {
+$code = $_GET['code'];
+  for ($i=0; $i < strlen($code); $i++) {
+    echo $messages[$code[$i]];
+  }
+}
+
+
+// foreach ($messages as $key => $value) {
+//   echo '<div class="alert alert-danger w-75 mx-auto" role="alert"> ' . $value . ' </div>';
+// }
+
 ?>
 
-<!-- <?php echo '<div class="alert alert-danger" role="alert"> . "  " . </div>'; ?> -->
 
 <form class="w-50 mx-auto my-5" action="sign.php" method="post">
   <div class="form-group">
