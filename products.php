@@ -30,12 +30,12 @@ $products = getProducts();
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">Prix : <?php echo $product["price"] ?></li>
-                <li class="list-group-item">Lieu de production: <?php echo $product["made_in"] ?></li>
+                <li class="list-group-item">Lieu de fabrication: <?php echo $product["made_in"] ?></li>
                 <li class="list-group-item">Catégorie : <?php echo $product["category"] ?></li>
               </ul>
               <div class="card-body">
                 <a type="button" href="#" class="btn btn-primary card-link text-white">Ajouter au panier</a>
-                <a type="button" href="infoProduct.php" class="btn btn-primary card-link text-white">Info du produit</a>
+                <a type="button" href="infoProduct.php?id=<?php echo $product['id']?>" class="btn btn-primary card-link text-white">Info du produit</a>
               </div>
             </div>
           </article>

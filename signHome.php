@@ -35,11 +35,11 @@ $code = $_GET['code'];
   <div class="form-group">
    <div class="text-center">
      <div class="form-check form-check-inline">
-       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required>
        <label class="form-check-label" for="inlineRadio1">Homme</label>
      </div>
      <div class="form-check form-check-inline">
-       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" required>
        <label class="form-check-label" for="inlineRadio2">Femme</label>
      </div>
       <!-- <label class="user">Votre sexe</label>
