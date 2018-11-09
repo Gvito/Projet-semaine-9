@@ -7,6 +7,10 @@ if(isset($_GET["message"])) {
   $message = htmlspecialchars($_GET["message"]);
   echo "<div class='alert alert-danger w-50 mx-auto'>" . $message . "</div>";
 }
+
+if (empty($code)) {
+  echo '<div class="alert alert-success w-25 text-center mx-auto" role="alert"> ' . 'Vous êtes inscrit. Bienvenue !' . ' </div>';
+}
  ?>
 
 <form class="w-50 mx-auto my-5" action="login.php" method="post">
