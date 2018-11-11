@@ -9,9 +9,13 @@ $messages= [
 //load Header
 include "Template/header.php";
 
+//if there are a code on the URL
 if (isset($_GET['code'])) {
+//var code URL
 $code = $_GET['code'];
+  //loops the different error messages
   for ($i=0; $i < strlen($code); $i++) {
+    // view error messages
     echo '<div class="alert alert-danger w-75 mx-auto" role="alert"> ' . $messages[$code[$i]] . ' </div>';
   }
 }

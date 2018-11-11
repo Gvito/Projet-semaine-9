@@ -7,7 +7,7 @@ if(isset($_GET["message"])) {
   $message = htmlspecialchars($_GET["message"]);
   echo "<div class='alert alert-danger w-50 mx-auto'>" . $message . "</div>";
 }
-
+// message success
 if (empty($code)) {
   echo '<div class="alert alert-success w-25 text-center mx-auto" role="alert"> ' . 'Vous êtes inscrit. Bienvenue !' . ' </div>';
 }
